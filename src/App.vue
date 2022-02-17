@@ -12,12 +12,24 @@
     <!-- <FilterTut/> -->
     <!-- <LifeCycle/> -->
     <!-- <AxiosTuts/> -->
-    <BootstrapTuts/>
+    <!-- <BootstrapTuts/> -->
+    <!-- <PostData/> -->
+    <!-- <PostDataDelete/> -->
+    <!-- <DynamicComp/> -->
+    <!-- <CustomDirective/> -->
+    <ComputedProperty/>
+
   </div>
 </template>
 
 <script>
-  import BootstrapTuts from './components/BootstrapTuts.vue'
+import Vue from 'vue'
+import ComputedProperty from './components/ComputedProperty.vue'
+// import CustomDirective from './components/CustomDirective.vue'
+// import DynamicComp from './components/DynamicComp.vue'
+// import PostData from './components/PostData.vue'
+// import PostDataDelete from './components/PostDataDelete.vue'
+// import BootstrapTuts from './components/BootstrapTuts.vue'
 // import AxiosTuts from './components/AxiosTuts.vue'
 // import LifeCycle from './components/LifeCycle.vue'
 // import FilterTut from './components/FilterTut.vue'
@@ -29,12 +41,15 @@
 // import DataBinding from './components/DataBinding.vue';
 // import PropsBinding from './components/PropsBinding.vue';
 
-
-
 export default {
   name: 'App',
   components: {
-    BootstrapTuts
+    ComputedProperty
+    // CustomDirective
+    // DynamicComp
+    // PostData,
+    // PostDataDelete
+    // BootstrapTuts
     // AxiosTuts
     // LifeCycle
     // FilterTut
@@ -63,6 +78,18 @@ export default {
   //   }
   // }
 }
+
+Vue.directive("size",{
+  bind(el,binding){
+  if(binding.value == 'big'){
+      el.style.fontSize = '100px'
+    }else if(binding.value == 'small'){
+      el.style.fontSize = '10px'
+    }else{
+      el.style.fontSize = '50px'
+    }
+  }
+})
 </script>
 
 <style>
